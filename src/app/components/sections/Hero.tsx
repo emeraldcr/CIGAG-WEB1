@@ -11,7 +11,7 @@ export function Hero() {
     <section id="inicio" className="relative flex min-h-screen w-full overflow-hidden pt-16">
       <div className="absolute inset-0">
         <ImageWithFallback src={hero.image} alt="Ganado bovino premium en campo verde" className="h-full w-full object-cover brightness-[0.32]" />
-        <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(26,46,32,0.94)_0%,rgba(26,46,32,0.72)_48%,rgba(30,58,74,0.78)_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(6,26,58,0.94)_0%,rgba(11,61,145,0.78)_50%,rgba(56,189,248,0.54)_100%)]" />
       </div>
 
       <Container>
