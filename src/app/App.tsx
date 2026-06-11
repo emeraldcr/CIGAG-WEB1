@@ -1,18 +1,18 @@
-import { Header } from "./components/Header";
-import { Hero } from "./components/Hero";
-import { Stats } from "./components/Stats";
-import { Services } from "./components/Services";
-import { HowWeWork } from "./components/HowWeWork";
-import { Institutional } from "./components/Institutional";
-import { GeneticCatalog } from "./components/GeneticCatalog";
-import { Testimonials } from "./components/Testimonials";
-import { CTAFinal } from "./components/CTAFinal";
-import { Footer } from "./components/Footer";
-import { WhatsAppButton } from "./components/WhatsAppButton";
+import { Header } from "./components/layout/Header";
+import { Footer } from "./components/layout/Footer";
+import { CTAFinal } from "./components/sections/CTAFinal";
+import { GeneticCatalog } from "./components/sections/GeneticCatalog";
+import { Hero } from "./components/sections/Hero";
+import { HowWeWork } from "./components/sections/HowWeWork";
+import { Institutional } from "./components/sections/Institutional";
+import { Services } from "./components/sections/Services";
+import { Stats } from "./components/sections/Stats";
+import { Testimonials } from "./components/sections/Testimonials";
+import { WhatsAppButton } from "./components/shared/WhatsAppButton";
 
 export default function App() {
   return (
-    <div style={{ fontFamily: "'Inter', system-ui, sans-serif", backgroundColor: "#f4f5f3" }}>
+    <div className="min-h-screen bg-brand-sand font-sans text-brand-forest antialiased">
       <Header />
       <main>
         <Hero />
