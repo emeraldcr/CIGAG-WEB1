@@ -20,7 +20,7 @@ export function Header() {
   const solidHeader = isScrolled || mobileOpen;
 
   return (
-    <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${solidHeader ? "border-b border-brand-gold/25 bg-brand-forest/94 shadow-[0_16px_44px_rgba(7,31,26,0.26)] backdrop-blur-xl" : "border-b border-white/10 bg-brand-ink/10 backdrop-blur-[2px]"}`}>
+    <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${solidHeader ? "border-b border-brand-gold/25 bg-brand-forest/94 shadow-[0_16px_44px_rgba(6,26,58,0.26)] backdrop-blur-xl" : "border-b border-white/10 bg-brand-ink/10 backdrop-blur-[2px]"}`}>
       <div className={`mx-auto flex max-w-7xl items-center justify-between px-5 transition-all duration-300 sm:px-6 lg:px-8 ${solidHeader ? "h-16" : "h-20"}`}>
         <a href="#inicio" aria-label="Ir al inicio" onClick={closeMenu}>
           <BrandLogo />

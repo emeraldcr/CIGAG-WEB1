@@ -30,7 +30,7 @@ export function Hero() {
       <motion.div className="absolute inset-0" style={{ y: shouldReduceMotion ? 0 : parallaxY, scale: shouldReduceMotion ? 1 : imageScale }}>
         <ImageWithFallback src={hero.image} alt="Ganado bovino premium en campo verde" className="h-full w-full object-cover brightness-[0.32]" />
       </motion.div>
-      <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(7,31,26,0.96)_0%,rgba(15,61,46,0.84)_48%,rgba(201,164,92,0.42)_100%)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(6,26,58,0.96)_0%,rgba(11,61,145,0.84)_48%,rgba(56,189,248,0.42)_100%)]" />
       <motion.div className="absolute inset-0 opacity-[0.18] [background-image:linear-gradient(rgba(255,255,255,0.24)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.24)_1px,transparent_1px)] [background-size:64px_64px]" style={{ y: shouldReduceMotion ? 0 : parallaxYReverse }} aria-hidden="true" />
       <motion.div className="absolute -right-28 top-24 h-72 w-72 rounded-full border border-brand-gold/25 bg-brand-gold/15 blur-2xl sm:h-96 sm:w-96" style={{ y: shouldReduceMotion ? 0 : parallaxYReverse }} aria-hidden="true" />
       <motion.div className="absolute bottom-20 left-[8%] h-36 w-36 rounded-full border border-white/10 bg-white/8 blur-xl" style={{ y: shouldReduceMotion ? 0 : parallaxY }} aria-hidden="true" />

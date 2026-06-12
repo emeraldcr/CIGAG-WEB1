@@ -33,12 +33,12 @@ export function AnimatedHeroVisual() {
       <motion.div className="absolute inset-8 rounded-[2rem] border border-white/10 opacity-70 [background-image:linear-gradient(rgba(255,255,255,0.24)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.24)_1px,transparent_1px)] [background-size:26px_26px]" style={{ y: shouldReduceMotion ? 0 : gridY }} aria-hidden="true" />
 
       <motion.div
-        className="group relative overflow-hidden rounded-[1.75rem] border border-white/15 bg-white/[0.075] p-3 shadow-[0_24px_70px_rgba(7,31,26,0.38)] backdrop-blur-xl"
+        className="group relative overflow-hidden rounded-[1.75rem] border border-white/15 bg-white/[0.075] p-3 shadow-[0_24px_70px_rgba(6,26,58,0.38)] backdrop-blur-xl"
         style={{ y: shouldReduceMotion ? 0 : cardY }}
         whileHover={shouldReduceMotion ? undefined : { y: -10, scale: 1.015 }}
         transition={{ duration: 0.35, ease: "easeOut" }}
       >
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_10%,rgba(201,164,92,0.24),transparent_34%),radial-gradient(circle_at_90%_20%,rgba(29,78,74,0.30),transparent_34%)]" aria-hidden="true" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_10%,rgba(56,189,248,0.24),transparent_34%),radial-gradient(circle_at_90%_20%,rgba(8,74,92,0.30),transparent_34%)]" aria-hidden="true" />
         <div className="relative overflow-hidden rounded-[1.25rem] border border-white/10 bg-brand-ink/70">
           <motion.div className="absolute inset-0 z-10 bg-gradient-to-br from-brand-forest/20 via-transparent to-brand-gold/30 opacity-80 transition duration-300 group-hover:opacity-95" aria-hidden="true" />
           <motion.div className="absolute left-0 right-0 top-1/2 z-20 h-px bg-gradient-to-r from-transparent via-brand-gold/80 to-transparent opacity-70" animate={shouldReduceMotion ? undefined : { y: [-34, 34, -34] }} transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }} aria-hidden="true" />
@@ -52,7 +52,7 @@ export function AnimatedHeroVisual() {
         </div>
       </motion.div>
 
-      <motion.div className="absolute -bottom-5 left-8 right-8 rounded-2xl border border-brand-gold/20 bg-brand-ink/80 p-4 text-white shadow-[0_18px_45px_rgba(7,31,26,0.34)] backdrop-blur-xl sm:left-12 sm:right-12" whileHover={shouldReduceMotion ? undefined : { y: -4 }}>
+      <motion.div className="absolute -bottom-5 left-8 right-8 rounded-2xl border border-brand-gold/20 bg-brand-ink/80 p-4 text-white shadow-[0_18px_45px_rgba(6,26,58,0.34)] backdrop-blur-xl sm:left-12 sm:right-12" whileHover={shouldReduceMotion ? undefined : { y: -4 }}>
         <div className="flex items-start gap-3">
           <div className="icon-box h-10 w-10 shrink-0 bg-brand-gold/15">
             <ScanLine aria-hidden="true" size={18} />
@@ -67,7 +67,7 @@ export function AnimatedHeroVisual() {
       {floatingBadges.map((badge) => (
         <motion.div
           key={badge.label}
-          className={`absolute z-20 rounded-full border border-brand-gold/35 bg-brand-ink/72 px-3 py-2 text-[0.68rem] font-bold uppercase tracking-[0.18em] text-brand-gold shadow-[0_12px_30px_rgba(7,31,26,0.22)] backdrop-blur-md ${badge.className}`}
+          className={`absolute z-20 rounded-full border border-brand-gold/35 bg-brand-ink/72 px-3 py-2 text-[0.68rem] font-bold uppercase tracking-[0.18em] text-brand-gold shadow-[0_12px_30px_rgba(6,26,58,0.22)] backdrop-blur-md ${badge.className}`}
           initial={shouldReduceMotion ? false : { opacity: 0, y: 16, scale: 0.9 }}
           animate={shouldReduceMotion ? undefined : { opacity: 1, y: [0, -8, 0], scale: 1 }}
           whileHover={shouldReduceMotion ? undefined : { y: -10, scale: 1.06 }}
