@@ -1,15 +1,26 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { navigation } from "../../data/siteContent";
 import { BrandLogo } from "../shared/BrandLogo";
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const updateHeaderState = () => setIsScrolled(window.scrollY > 12);
+
+    updateHeaderState();
+    window.addEventListener("scroll", updateHeaderState, { passive: true });
+
+    return () => window.removeEventListener("scroll", updateHeaderState);
+  }, []);
 
   const closeMenu = () => setMobileOpen(false);
+  const solidHeader = isScrolled || mobileOpen;
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-brand-gold/20 bg-brand-forest/95 backdrop-blur-md">
+    <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${solidHeader ? "border-b border-brand-gold/20 bg-brand-forest/92 shadow-[0_14px_40px_rgba(6,26,58,0.18)] backdrop-blur-xl" : "border-b border-white/10 bg-brand-ink/18 backdrop-blur-[2px]"}`}>
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 sm:px-6 lg:px-8">
         <a href="#inicio" aria-label="Ir al inicio" onClick={closeMenu}>
           <BrandLogo />
@@ -29,7 +40,7 @@ export function Header() {
 
         <button
           type="button"
-          className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-white/10 text-white transition hover:bg-white/10 lg:hidden"
+          className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-white/10 text-white transition hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-gold lg:hidden"
           aria-label={mobileOpen ? "Cerrar menú de navegación" : "Abrir menú de navegación"}
           aria-expanded={mobileOpen}
           aria-controls="mobile-navigation"
@@ -40,10 +51,10 @@ export function Header() {
       </div>
 
       {mobileOpen ? (
-        <nav id="mobile-navigation" aria-label="Navegación móvil" className="border-t border-white/10 bg-brand-forest px-5 py-5 lg:hidden">
+        <nav id="mobile-navigation" aria-label="Navegación móvil" className="border-t border-white/10 bg-brand-forest/98 px-5 py-5 shadow-2xl backdrop-blur-xl lg:hidden">
           <div className="mx-auto flex max-w-7xl flex-col gap-1">
             {navigation.map((link) => (
-              <a key={link.href} href={link.href} onClick={closeMenu} className="rounded-md px-3 py-3 text-sm font-medium text-white/75 transition hover:bg-white/8 hover:text-white">
+              <a key={link.href} href={link.href} onClick={closeMenu} className="rounded-md px-3 py-3 text-sm font-medium text-white/75 transition hover:bg-white/8 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-gold">
                 {link.label}
               </a>
             ))}

@@ -1,6 +1,8 @@
 import { CheckCircle2 } from "lucide-react";
 import { catalogBenefits, geneticCatalog } from "../../data/siteContent";
 import { Container } from "../shared/Container";
+import { CTAButton } from "../shared/CTAButton";
+import { RevealOnScroll } from "../shared/RevealOnScroll";
 import { SectionHeader } from "../shared/SectionHeader";
 
 export function GeneticCatalog() {
@@ -8,7 +10,7 @@ export function GeneticCatalog() {
     <section id="catalogo" className="section-padding bg-brand-sand">
       <Container>
         <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
-          <div>
+          <RevealOnScroll>
             <SectionHeader
               eyebrow="Catálogo genético"
               title="Líneas bovinas seleccionadas para objetivos concretos"
@@ -23,21 +25,28 @@ export function GeneticCatalog() {
                 </li>
               ))}
             </ul>
-          </div>
+
+            <div className="mt-8">
+              <CTAButton href="#contacto">Solicitar información genética</CTAButton>
+            </div>
+          </RevealOnScroll>
 
           <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
-            {geneticCatalog.map((item) => (
-              <article key={item.breed} className="rounded-xl border border-black/5 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
-                <p className="text-xs font-bold uppercase tracking-[0.22em] text-brand-gold">{item.focus}</p>
-                <h3 className="mt-3 text-xl font-bold text-brand-forest">{item.breed}</h3>
-                <div className="mt-5 flex flex-wrap gap-2">
-                  {item.traits.map((trait) => (
-                    <span key={trait} className="rounded-full border border-brand-gold/25 bg-brand-gold/10 px-3 py-1 text-xs font-semibold text-brand-forest">
-                      {trait}
-                    </span>
-                  ))}
-                </div>
-              </article>
+            {geneticCatalog.map((item, index) => (
+              <RevealOnScroll key={item.breed} delay={index * 0.07}>
+                <article className="group relative h-full overflow-hidden rounded-xl border border-black/5 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-brand-gold/35 hover:shadow-[0_18px_45px_rgba(6,26,58,0.12)]">
+                  <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-brand-gold to-brand-gold-dark opacity-70" aria-hidden="true" />
+                  <p className="text-xs font-bold uppercase tracking-[0.22em] text-brand-gold">{item.focus}</p>
+                  <h3 className="mt-3 text-xl font-bold text-brand-forest">{item.breed}</h3>
+                  <div className="mt-5 flex flex-wrap gap-2">
+                    {item.traits.map((trait) => (
+                      <span key={trait} className="rounded-full border border-brand-gold/25 bg-brand-gold/10 px-3 py-1 text-xs font-semibold text-brand-forest transition group-hover:border-brand-gold/45">
+                        {trait}
+                      </span>
+                    ))}
+                  </div>
+                </article>
+              </RevealOnScroll>
             ))}
           </div>
         </div>

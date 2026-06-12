@@ -3,6 +3,7 @@ import { contact, finalCtaImage } from "../../data/siteContent";
 import { ImageWithFallback } from "../figma/ImageWithFallback";
 import { Container } from "../shared/Container";
 import { CTAButton } from "../shared/CTAButton";
+import { RevealOnScroll } from "../shared/RevealOnScroll";
 import { SectionHeader } from "../shared/SectionHeader";
 
 export function CTAFinal() {
@@ -14,7 +15,7 @@ export function CTAFinal() {
       </div>
 
       <Container>
-        <div className="relative z-10 mx-auto max-w-4xl text-center">
+        <RevealOnScroll className="relative z-10 mx-auto max-w-4xl text-center">
           <SectionHeader
             eyebrow="Comience hoy"
             title="¿Desea mejorar la genética de su hato?"
@@ -28,7 +29,7 @@ export function CTAFinal() {
               Contactar por WhatsApp
             </CTAButton>
           </div>
-        </div>
+        </RevealOnScroll>
       </Container>
     </section>
   );
