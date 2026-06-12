@@ -3,6 +3,7 @@ import { PlayCircle } from "lucide-react";
 import { useRef } from "react";
 import { hero } from "../../data/siteContent";
 import { ImageWithFallback } from "../figma/ImageWithFallback";
+import { AnimatedHeroVisual } from "../AnimatedHeroVisual";
 import { RevealOnScroll } from "../RevealOnScroll";
 import { Container } from "../shared/Container";
 import { CTAButton } from "../shared/CTAButton";
@@ -20,7 +21,7 @@ export function Hero() {
   const revealProps = shouldReduceMotion
     ? {}
     : {
-        initial: { opacity: 0, y: 34 },
+        initial: { opacity: 0, y: 30 },
         animate: { opacity: 1, y: 0 },
       };
 
@@ -37,7 +38,7 @@ export function Hero() {
       <div className="absolute left-[6%] top-[34%] hidden h-px w-44 rotate-[-18deg] bg-gradient-to-r from-transparent via-brand-gold/55 to-transparent lg:block" aria-hidden="true" />
 
       <Container>
-        <RevealOnScroll className="relative z-10 flex min-h-[calc(100vh-4rem)] items-center py-16 sm:py-20">
+        <RevealOnScroll className="relative z-10 grid min-h-[calc(100vh-4rem)] items-center gap-12 py-16 sm:py-20 lg:grid-cols-[minmax(0,1fr)_minmax(22rem,0.72fr)]">
           <div className="max-w-3xl">
             <motion.div className="badge mb-6" {...revealProps} transition={{ ...heroTransition, delay: 0.08 }}>
               <span className="h-1.5 w-1.5 rounded-full bg-brand-gold" />
@@ -68,6 +69,8 @@ export function Hero() {
               ))}
             </motion.dl>
           </div>
+
+          <AnimatedHeroVisual />
         </RevealOnScroll>
       </Container>
 
