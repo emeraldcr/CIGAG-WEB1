@@ -2,12 +2,13 @@ import type { ReactNode } from "react";
 import { brand, contactItems, quickLinks, serviceLinks, socialLinks } from "../../data/siteContent";
 import { Container } from "../shared/Container";
 import { BrandLogo } from "../shared/BrandLogo";
+import { RevealOnScroll } from "../RevealOnScroll";
 
 export function Footer() {
   return (
     <footer id="contacto" className="border-t border-brand-gold/20 bg-brand-ink">
       <Container>
-        <div className="grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-[1.25fr_0.8fr_1fr_1fr] lg:py-16">
+        <RevealOnScroll className="grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-[1.25fr_0.8fr_1fr_1fr] lg:py-16">
           <div>
             <BrandLogo compact />
             <p className="mt-5 max-w-sm text-sm leading-7 text-white/55">{brand.description}</p>
@@ -47,7 +48,7 @@ export function Footer() {
               ))}
             </ul>
           </div>
-        </div>
+        </RevealOnScroll>
       </Container>
 
       <div className="border-t border-white/[0.06] py-4">
