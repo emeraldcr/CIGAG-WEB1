@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 import { brand, contactItems, quickLinks, serviceLinks, socialLinks } from "../../data/siteContent";
 import { Container } from "../shared/Container";
 import { BrandLogo } from "../shared/BrandLogo";
-import { RevealOnScroll } from "../shared/RevealOnScroll";
+import { RevealOnScroll } from "../RevealOnScroll";
 
 export function Footer() {
   return (

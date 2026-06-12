@@ -1,6 +1,6 @@
 import { workflowSteps } from "../../data/siteContent";
 import { Container } from "../shared/Container";
-import { RevealOnScroll } from "../shared/RevealOnScroll";
+import { RevealOnScroll } from "../RevealOnScroll";
 import { SectionHeader } from "../shared/SectionHeader";
 
 export function HowWeWork() {
@@ -18,7 +18,7 @@ export function HowWeWork() {
 
           <div className="relative grid gap-5">
             {workflowSteps.map((step, index) => (
-              <RevealOnScroll key={step.number} delay={index * 0.07}>
+              <RevealOnScroll key={step.number} delay={index * 0.12}>
                 <article className="relative rounded-xl border border-black/5 bg-brand-sand p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-brand-gold/30 hover:shadow-lg sm:p-7">
                   {index < workflowSteps.length - 1 ? <span className="absolute left-8 top-full hidden h-5 w-px bg-brand-gold/35 sm:block" aria-hidden="true" /> : null}
                   <div className="flex gap-5">

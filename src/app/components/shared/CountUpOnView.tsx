@@ -1,4 +1,4 @@
-import { animate, useInView, useMotionValue, useReducedMotion } from "motion/react";
+import { animate, useInView, useMotionValue, useReducedMotion } from "framer-motion";
 import { useEffect, useMemo, useRef, useState } from "react";
 
 type CountUpOnViewProps = {

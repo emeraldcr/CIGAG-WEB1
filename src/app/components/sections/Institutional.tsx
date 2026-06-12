@@ -1,7 +1,7 @@
 import { institutionalHighlights } from "../../data/siteContent";
 import { ImageWithFallback } from "../figma/ImageWithFallback";
 import { Container } from "../shared/Container";
-import { RevealOnScroll } from "../shared/RevealOnScroll";
+import { RevealOnScroll } from "../RevealOnScroll";
 import { SectionHeader } from "../shared/SectionHeader";
 
 const labImage = "https://images.unsplash.com/photo-1582719471384-894fbb16e074?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080";
@@ -23,7 +23,7 @@ export function Institutional() {
 
             <div className="mt-10 grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
               {institutionalHighlights.map(({ icon: Icon, title, description }, index) => (
-                <RevealOnScroll key={title} delay={index * 0.07}>
+                <RevealOnScroll key={title} delay={index * 0.12}>
                   <article className="flex gap-4 rounded-xl border border-white/10 bg-white/[0.045] p-5 backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:border-brand-gold/35 hover:bg-white/[0.07]">
                     <div className="icon-box shrink-0">
                       <Icon aria-hidden="true" size={20} />

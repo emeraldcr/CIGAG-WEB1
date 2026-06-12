@@ -1,4 +1,4 @@
-import { motion, useReducedMotion, useScroll, useSpring } from "motion/react";
+import { motion, useReducedMotion, useScroll, useSpring } from "framer-motion";
 
 export function ScrollProgress() {
   const shouldReduceMotion = useReducedMotion();

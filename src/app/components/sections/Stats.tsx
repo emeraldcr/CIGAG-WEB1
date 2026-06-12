@@ -1,7 +1,7 @@
 import { stats } from "../../data/siteContent";
 import { Container } from "../shared/Container";
 import { CountUpOnView } from "../shared/CountUpOnView";
-import { RevealOnScroll } from "../shared/RevealOnScroll";
+import { RevealOnScroll } from "../RevealOnScroll";
 import { SectionHeader } from "../shared/SectionHeader";
 
 export function Stats() {
@@ -14,8 +14,8 @@ export function Stats() {
         </RevealOnScroll>
         <div className="relative z-10 mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {stats.map(({ icon: Icon, value, label, description }, index) => (
-            <RevealOnScroll key={`${value}-${label}`} delay={index * 0.07}>
-              <article className="h-full rounded-xl border border-brand-gold/20 bg-white/[0.045] p-6 shadow-[0_1px_0_rgba(255,255,255,0.04)] transition duration-300 hover:-translate-y-1 hover:border-brand-gold/45 hover:bg-white/[0.07] hover:shadow-[0_18px_45px_rgba(6,26,58,0.22)]">
+            <RevealOnScroll key={`${value}-${label}`} delay={index * 0.12}>
+              <article className="h-full rounded-xl border border-brand-gold/20 bg-white/[0.045] p-6 shadow-[0_1px_0_rgba(255,255,255,0.04)] transition duration-300 hover:-translate-y-1 hover:border-brand-gold/45 hover:bg-white/[0.07] hover:shadow-[0_18px_45px_rgba(7,31,26,0.22)]">
                 <div className="icon-box mb-5">
                   <Icon aria-hidden="true" size={21} />
                 </div>

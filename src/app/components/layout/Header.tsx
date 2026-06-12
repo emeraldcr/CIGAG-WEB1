@@ -8,7 +8,7 @@ export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
-    const updateHeaderState = () => setIsScrolled(window.scrollY > 12);
+    const updateHeaderState = () => setIsScrolled(window.scrollY > 20);
 
     updateHeaderState();
     window.addEventListener("scroll", updateHeaderState, { passive: true });
@@ -20,8 +20,8 @@ export function Header() {
   const solidHeader = isScrolled || mobileOpen;
 
   return (
-    <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${solidHeader ? "border-b border-brand-gold/20 bg-brand-forest/92 shadow-[0_14px_40px_rgba(6,26,58,0.18)] backdrop-blur-xl" : "border-b border-white/10 bg-brand-ink/18 backdrop-blur-[2px]"}`}>
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 sm:px-6 lg:px-8">
+    <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${solidHeader ? "border-b border-brand-gold/25 bg-brand-forest/94 shadow-[0_16px_44px_rgba(7,31,26,0.26)] backdrop-blur-xl" : "border-b border-white/10 bg-brand-ink/10 backdrop-blur-[2px]"}`}>
+      <div className={`mx-auto flex max-w-7xl items-center justify-between px-5 transition-all duration-300 sm:px-6 lg:px-8 ${solidHeader ? "h-16" : "h-20"}`}>
         <a href="#inicio" aria-label="Ir al inicio" onClick={closeMenu}>
           <BrandLogo />
         </a>

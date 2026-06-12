@@ -1,7 +1,7 @@
 import { Quote, TrendingUp } from "lucide-react";
 import { testimonials } from "../../data/siteContent";
 import { Container } from "../shared/Container";
-import { RevealOnScroll } from "../shared/RevealOnScroll";
+import { RevealOnScroll } from "../RevealOnScroll";
 import { SectionHeader } from "../shared/SectionHeader";
 
 export function Testimonials() {
@@ -19,7 +19,7 @@ export function Testimonials() {
 
         <div className="mt-12 grid grid-cols-1 gap-5 lg:grid-cols-3">
           {testimonials.map((testimonial, index) => (
-            <RevealOnScroll key={testimonial.ranch} delay={index * 0.08}>
+            <RevealOnScroll key={testimonial.ranch} delay={index * 0.14}>
               <article className="flex h-full flex-col rounded-xl border border-black/5 bg-brand-sand p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-brand-gold/30 hover:shadow-lg">
                 <div>
                   <p className="text-xs font-bold uppercase tracking-[0.22em] text-brand-gold">{testimonial.country}</p>
